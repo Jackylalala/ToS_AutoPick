@@ -1,0 +1,14 @@
+'以BlueStacks的HD-RunApp.exe配合參數啟動Titanium Pro
+            Shell("""" & Environ("ProgramFiles") & "\BlueStacks\HD-RunApp.exe"" Android com.keramidas.TitaniumBackup com.keramidas.TitaniumBackup.MainActivity", AppWinStyle.NormalFocus, True, -1)
+            '確認是否已經讀取完畢(以色彩偵測)
+            WaitUntil(hwnd, 67, 72, Color.FromArgb(3, 244, 3), False)
+            Sleep(300 * speed)
+            BgdMouseLClick(hwnd, 178 + 65536 * 64) '備份/還原
+            Sleep(1500 * speed)
+            BgdMouseLClick(hwnd, 203 + 65536 * 147) '神魔
+            Sleep(1500 * speed)
+            BgdMouseLClick(hwnd, 307 + 65536 * 166) '清除資料
+            Sleep(1500 * speed)
+            BgdMouseLClick(hwnd, 94 + 65536 * 394) '確認
+            Sleep(1500 * speed)
+            BgdMyKeyPress(hwnd, System.Windows.Forms.Keys.Escape) '回到Titanium主畫面

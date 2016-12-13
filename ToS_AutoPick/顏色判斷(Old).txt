@@ -1,0 +1,8 @@
+'比對兩個顏色是否相似，similar參數代表相似度(0.1-1.0)
+    Private Function ColorMatch(sample As Color, standard As Color, similar As Single) As Boolean
+        If (sample.R < (standard.R * (2 - similar)) And sample.R > (standard.R * similar)) And (sample.G < (standard.G * (2 - similar)) And sample.G > (standard.G * similar)) And (sample.B < (standard.B * (2 - similar)) And sample.B > (standard.B * similar)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
